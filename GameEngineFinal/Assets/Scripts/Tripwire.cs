@@ -2,9 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class LavaFloor : MonoBehaviour
+public class Tripwire : MonoBehaviour
 {
-    public PlayerMovement Player;
+    public GameObject parent;
+    public GameObject trap;
     // Start is called before the first frame update
     void Start()
     {
@@ -17,11 +18,12 @@ public class LavaFloor : MonoBehaviour
         
     }
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider other)
     {
-        if (collision.collider.tag == "Player")
+        if (other.tag == "Player")
         {
-            Player.Respawn();
+            Destroy(trap);
+            Destroy(parent);
         }
     }
 }

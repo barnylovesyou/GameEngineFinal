@@ -6,6 +6,7 @@ public class PlayerMovement : MonoBehaviour
 {
     public float speed = 3.0f;
     public float rotationSpeed = 90f;
+    public float speedCap;
     public Transform spawnPoint;
     private float horizontal;
     private float vertical;
@@ -32,11 +33,12 @@ public class PlayerMovement : MonoBehaviour
         horizontal = Input.GetAxis("Horizontal");
         vertical = Input.GetAxis("Vertical");
 
-        Vector3 velocity = (transform.forward * vertical) + (transform.right * horizontal) * speed;// * Time.fixedDeltaTime;
-        velocity.y = rb.velocity.y;
-        rb.velocity = velocity;
+        if (rb.velocity.x < speedCap && rb.velocity.z < speedCap)
+        {
+            rb.velocity = transform.TransformDirection(horizontal * speed, rb.velocity.y, vertical * speed);
+        }
         transform.Rotate((transform.up * Input.GetAxis("Mouse X")) * rotationSpeed * Time.fixedDeltaTime);
-        if (horizontal == 0)
+        if (Input.GetAxis("Mouse X") == 0)
         {
             rb.angularVelocity = new Vector3(0f, 0f, 0f);
         }
@@ -45,5 +47,21 @@ public class PlayerMovement : MonoBehaviour
     public void Respawn()
     {
         transform.position = spawnPoint.position;
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.collider.tag == "Ice")
+        {
+            GetComponent<Collider>().material.dynamicFriction = 0;
+        }
+    }
+
+    private void OnCollisionExit(Collision collision)
+    {
+        if (collision.collider.tag == "Ice")
+        {
+            GetComponent<Collider>().material.dynamicFriction = 1;
+        }
     }
 }
