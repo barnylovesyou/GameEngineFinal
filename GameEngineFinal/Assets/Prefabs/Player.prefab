@@ -96,6 +96,7 @@ GameObject:
   - component: {fileID: 4299276124024394718}
   - component: {fileID: 4299276124024394719}
   - component: {fileID: 4299276124024394707}
+  - component: {fileID: 1337900676728862066}
   - component: {fileID: 4299276124024394712}
   m_Layer: 0
   m_Name: Player
@@ -190,14 +191,28 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4299276124024394713}
   serializedVersion: 2
-  m_Mass: 90
+  m_Mass: 10
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 80
+  m_Constraints: 112
   m_CollisionDetection: 0
+--- !u!114 &1337900676728862066
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4299276124024394713}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ea0aa7e66a32a140a819b3beeedd067, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cross1: 0
+  cross2: 0
 --- !u!114 &4299276124024394712
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -210,7 +225,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 03b344e0240086d44843b118304083aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
-  rotationSpeed: 270
-  speedCap: 10
-  spawnPoint: {fileID: 0}
+  respawnWorld: {fileID: 0}
+  speed: 4
+  rotationSpeed: 450
+  myCam: {fileID: 4299276123417910600}
+  speedCap: 3
+  jumpForce: 50
+  spawnPoint: {x: 0, y: 0, z: 0}
+  jump: 32

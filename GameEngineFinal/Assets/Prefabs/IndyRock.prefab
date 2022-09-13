@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 6120685906292244821}
   - component: {fileID: 6120685906292244818}
   - component: {fileID: 6120685906292244819}
+  - component: {fileID: 1648047536435815937}
   m_Layer: 0
   m_Name: Ceiling
   m_TagString: Untagged
@@ -60,7 +61,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 9271a1c9b5aa5264ab365fbcc18dcaf6, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -95,6 +96,19 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1648047536435815937
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6120685906292244817}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 670835880b9eeb64bb75e957bb628fae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Rock: {fileID: 6120685907187400322}
 --- !u!1 &6120685907187400322
 GameObject:
   m_ObjectHideFlags: 0
@@ -157,7 +171,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: bd5845647875c9042a776f644636f500, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -220,7 +234,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da204b16ebdfcc546a2d7939375dd147, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Player: {fileID: 0}
 --- !u!1 &6120685907192706039
 GameObject:
   m_ObjectHideFlags: 0
