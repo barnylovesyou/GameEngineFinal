@@ -25,7 +25,7 @@ public class RespawnWorld : MonoBehaviour
             activatable[i].SetActive(true);
         }
         var traps= FindObjectsOfType<Trap>();
-        for(int i =0;i<traps.Length;i++)
+        for(int i = 0; i < traps.Length;i++)
         {
             traps[i].Respawn();
         }
@@ -38,11 +38,6 @@ public class RespawnWorld : MonoBehaviour
         for (int i = 0; i < smallBad.Length; i++)
         {
             smallBad[i].Respawn();
-        }
-        var tripWire = FindObjectsOfType<Tripwire>();
-        for (int i = 0; i < tripWire.Length; i++)
-        {
-            tripWire[i].Respawn();
         }
         var plat = FindObjectsOfType<MovingPlatform>();
         for (int i = 0; i < plat.Length; i++)

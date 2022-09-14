@@ -56,7 +56,7 @@ public class MoveAgent : MonoBehaviour
         if (increasing)
         {
             curWaypoint++;
-            if (curWaypoint >waypoints.Count)
+            if (curWaypoint > waypoints.Count)
             {
                 increasing = false;
                 curWaypoint--;
