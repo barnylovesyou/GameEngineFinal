@@ -5,6 +5,7 @@ using UnityEngine;
 public class Portal : MonoBehaviour
 {
     [SerializeField] Transform teleport;
+    [SerializeField] Canvas win;
     // Start is called before the first frame update
     void Start()
     {
@@ -15,6 +16,7 @@ public class Portal : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             other.transform.position = teleport.position;
+            win.gameObject.SetActive(true);
         }
     }
 }
