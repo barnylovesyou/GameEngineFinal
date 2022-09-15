@@ -24,13 +24,17 @@ public class CrossDropoff : MonoBehaviour
         {
             if(other.GetComponent<PlayerVictory>().cross1)
             {
-                Instantiate(cross, cross1Loc.position, Quaternion.identity);
+                GameObject newCross = Instantiate(cross, Vector3.zero, Quaternion.identity);
+                newCross.transform.parent = cross1Loc;
+                newCross.transform.localPosition = new Vector3(-12.215f, -5.22f, 14.868f);
                 cross1 = true;
                 other.GetComponent<PlayerVictory>().cross1 = false;
             }
             if (other.GetComponent<PlayerVictory>().cross2)
             {
-                Instantiate(cross, cross2Loc.position, Quaternion.identity);
+                GameObject newCross =Instantiate(cross, Vector3.zero, Quaternion.identity);
+                newCross.transform.parent = cross2Loc;
+                newCross.transform.localPosition = new Vector3(3.249f, -5.475f, 14.867f);
                 cross2 = true;
                 other.GetComponent<PlayerVictory>().cross2 = false;
             }

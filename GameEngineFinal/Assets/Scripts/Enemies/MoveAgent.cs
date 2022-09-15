@@ -24,7 +24,6 @@ public class MoveAgent : MonoBehaviour
         increasing = true;
         patrolling = true;
         enemyTrans = null;
-        Debug.Log("MoveRespawn");
     }
 
     // Update is called once per frame
@@ -53,26 +52,15 @@ public class MoveAgent : MonoBehaviour
     }
     void NextWaypoint()
     {
-        if (increasing)
+        if (curWaypoint >= waypoints.Count - 1)
         {
-            curWaypoint++;
-            if (curWaypoint > waypoints.Count)
-            {
-                increasing = false;
-                curWaypoint--;
-                curWaypoint--;
-            }
+            increasing = false;
         }
-        else
+        else if (curWaypoint <= 0)
         {
-            curWaypoint--;
-            if (curWaypoint < 0)
-            {
-                increasing = true;
-                curWaypoint++;
-                curWaypoint++;
-            }
+            increasing = true;
         }
+        curWaypoint += increasing ? 1 : -1;
     }
     public void HostileFound(Transform newEnemyLoc)
     {
